@@ -1,0 +1,97 @@
+* {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  /* background: rgb(72, 114, 8);
+  background: linear-gradient(
+    90deg,
+    rgba(72, 114, 8, 1) 0%,
+    rgba(103, 170, 3, 1) 30%,
+    rgba(207, 255, 193, 1) 100%
+  ); */
+  background: rgb(140, 75, 23);
+  background: linear-gradient(
+    90deg,
+    rgba(140, 75, 23, 1) 0%,
+    rgba(174, 111, 68, 1) 30%,
+    rgba(252, 154, 98, 1) 100%
+  );
+}
+html,
+body {
+  display: grid;
+  place-items: center;
+  height: 100%;
+}
+
+.wrapper {
+  height: 400px;
+  width: 240px;
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+.wrapper:hover > .front-face {
+  transform: rotateY(-180deg);
+}
+.wrapper .card {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: #5d5845;
+  border-radius: 15px;
+  transform: rotateY(0deg);
+  padding: 3px;
+  transition: all 0.5s ease;
+}
+
+.wrapper .card img {
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.wrapper .back-face img {
+  margin-top: 20px;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  padding: 5px;
+  background: #5d5845;
+}
+.wrapper .back-face {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+}
+.wrapper:hover > .back-face {
+  transform: rotateY(0deg);
+}
+.wrapper .back-face .info {
+  margin-top: 60px;
+  text-align: center;
+}
+.wrapper .back-face .info .title {
+  margin-top: -20px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #eee;
+}
+.wrapper .back-face:hover .title {
+  opacity: 1;
+  transform: translateY(0);
+}
+.wrapper .back-face .info .title span {
+  color: #eee;
+}
+.wrapper .back-face .info p {
+  font-size: 14px;
+  line-height: 1.2;
+  color: #eee;
+}
